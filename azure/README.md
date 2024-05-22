@@ -14,20 +14,15 @@ You must already have an Azure Cloud account; preferably a brand new account.
 - Go to Subscriptions and create a new subscription named "management"
   - Add the name of the app registration (terraform-ci) as Contributor and User Access Administrator
 
-Example credentials:
-```
-CLIENT_ID: 76821e8f-6d7b-XXXX-a38b-c5e58eb69c2e
-TENANT_ID: XXXX-d8ce-4c2b-aad2-3b3bdef87267
-CLIENT_SECRET: XXXX
-SECRET_ID: e177db5c-7d43-4ae9-XXXX-459320f8a3b9
-```
-
 Give the Application Service Principal Contributor and User Access roles
 
-Export the values, for now, into the local environment
-Configure terraform to work with AzureRM
-Verify you can do a plan with outputs and stop
-Setup build pipelines with the secrets configured above
+STOP USING THE AZURE PORTAL NOW!
+
+Until a pipeline is setup, verify that terraform can communicate to Azure. Configure the credentials as local environment variables. See [Specify service principal credentials in environment variables](https://learn.microsoft.com/en-us/azure/developer/terraform/authenticate-to-azure?tabs=bash#specify-service-principal-credentials-in-environment-variables)
+
+Verify you can do a `terraform plan` with no errors and then stop.
+
+Setup build pipelines with the secrets configured above and delete them from your local environment.
 Use the pipeline and stop doing local plan/apply
 
 The terraform state can be manually created or done via terraform. It is preferable to to it via terraform.
